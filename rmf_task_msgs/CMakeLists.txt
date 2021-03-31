@@ -23,13 +23,28 @@ set(msg_files
   "msg/BehaviorParameter.msg"
   "msg/Station.msg"
   "msg/TaskSummary.msg"
+  "msg/TaskDescription.msg"
   "msg/Tasks.msg"
   "msg/Loop.msg"
   "msg/Tow.msg"
+  "msg/TaskType.msg"
+  "msg/Clean.msg"
+  "msg/TaskProfile.msg"
+  "msg/BidNotice.msg"
+  "msg/BidProposal.msg"
+  "msg/DispatchRequest.msg"
+  "msg/DispatchAck.msg"
+  "msg/Priority.msg"
+)
+set(srv_files
+  "srv/SubmitTask.srv"
+  "srv/CancelTask.srv"
+  "srv/GetTaskList.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
+  ${srv_files}
   DEPENDENCIES
     builtin_interfaces
     rmf_dispenser_msgs
